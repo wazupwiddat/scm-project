@@ -1,0 +1,15 @@
+.DS_Store
+
+.classpath
+.project
+
+target
+
+/plugins/*
+/config/*
+
+.idea
+*.iml
+
+/web-app/plugins
+/web-app/WEB-INF/classes
