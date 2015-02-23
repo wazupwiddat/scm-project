@@ -7,6 +7,25 @@ grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
+//// Repositories we publish to
+//grails.project.repos.spireonSnap.url = "http://nexus.spireon.com/nexus/content/repositories/spireon-snapshot"
+////grails.project.repos.spireonSnap.type = "maven"
+//grails.project.repos.spireonRel.url = "http://nexus.spireon.com/nexus/content/repositories/spireon-release"
+//grails.project.repos.spireonRel.type = "maven"
+//grails.project.repos.default = "spireonSnap"
+//
+grails.project.groupId="com.spireon"
+grails.project.version="0.1-SNAPSHOT"
+
+grails.project.dependency.distribution = {
+	remoteRepository(id: "spireonSnap", url: "http://nexus.spireon.com/nexus/content/repositories/spireon-snapshot") {
+		authentication username: "jwarren", password: "spireon!11"
+	}
+	remoteRepository(id: "spireonRel", url: "http://nexus.spireon.com/nexus/content/repositories/spireon-release") {
+		authentication username: "jwarren", password: "spireon!11"
+	}
+}
+
 grails.project.fork = [
     // configure settings for compilation JVM, note that if you alter the Groovy version forked compilation is required
     //  compile: [maxMemory: 256, minMemory: 64, debug: false, maxPerm: 256, daemon:true],
@@ -44,6 +63,13 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+	    //maven
+	    mavenRepo(id:'Spireon', url:'http://nexus.spireon.com/nexus/content/repositories/spireon-snapshot') {
+		    updatePolicy "interval:1"
+	    }
+	    mavenRepo(id:'SpireonRelease', url:'http://nexus.spireon.com/nexus/content/repositories/spireon-release') {
+		    updatePolicy "interval:1"
+	    }
     }
 
     dependencies {
@@ -54,7 +80,15 @@ grails.project.dependency.resolution = {
 
     plugins {
         // plugins for the build system only
-        build ":tomcat:7.0.52.1"
+        build(":tomcat:7.0.52.1") {
+	        export = false
+        }
+	      build(":release:3.0.1") {
+		      export = false
+	      }
+	      build(":rest-client-builder:2.0.1") {
+		      export = false
+	      }
 
         // plugins for the compile step
         compile ":scaffolding:2.0.2"
