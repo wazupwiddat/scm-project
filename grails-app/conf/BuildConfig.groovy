@@ -7,23 +7,14 @@ grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
-//// Repositories we publish to
-//grails.project.repos.spireonSnap.url = "http://nexus.spireon.com/nexus/content/repositories/spireon-snapshot"
-////grails.project.repos.spireonSnap.type = "maven"
-//grails.project.repos.spireonRel.url = "http://nexus.spireon.com/nexus/content/repositories/spireon-release"
-//grails.project.repos.spireonRel.type = "maven"
-//grails.project.repos.default = "spireonSnap"
-//
-grails.project.groupId="com.spireon"
+// Repositories we publish to
+grails.project.repos.spireonSnap.url = "http://nexus.spireon.com/nexus/content/repositories/spireon-snapshot"
+grails.project.repos.spireonSnap.type = "maven"
+grails.project.repos.spireonRel.url = "http://nexus.spireon.com/nexus/content/repositories/spireon-release"
+grails.project.repos.spireonRel.type = "maven"
+grails.project.repos.default = "spireonSnap"
 
-grails.project.dependency.distribution = {
-	remoteRepository(id: "spireonSnap", url: "http://nexus.spireon.com/nexus/content/repositories/spireon-snapshot") {
-		authentication username: "jwarren", password: "spireon!11"
-	}
-	remoteRepository(id: "spireonRel", url: "http://nexus.spireon.com/nexus/content/repositories/spireon-release") {
-		authentication username: "jwarren", password: "spireon!11"
-	}
-}
+grails.project.groupId="com.spireon"
 
 grails.project.fork = [
     // configure settings for compilation JVM, note that if you alter the Groovy version forked compilation is required
