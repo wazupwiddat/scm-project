@@ -15,7 +15,6 @@ grails.project.source.level = 1.6
 //grails.project.repos.default = "spireonSnap"
 //
 grails.project.groupId="com.spireon"
-grails.project.version="0.1-SNAPSHOT"
 
 grails.project.dependency.distribution = {
 	remoteRepository(id: "spireonSnap", url: "http://nexus.spireon.com/nexus/content/repositories/spireon-snapshot") {
