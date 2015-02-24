@@ -9,9 +9,9 @@ grails.project.source.level = 1.6
 
 // Repositories we publish to
 grails.project.repos.spireonSnap.url = "http://nexus.spireon.com/nexus/content/repositories/spireon-snapshot"
-grails.project.repos.spireonSnap.type = "maven"
+//grails.project.repos.spireonSnap.type = "maven"
 grails.project.repos.spireonRel.url = "http://nexus.spireon.com/nexus/content/repositories/spireon-release"
-grails.project.repos.spireonRel.type = "maven"
+//grails.project.repos.spireonRel.type = "maven"
 grails.project.repos.default = "spireonSnap"
 
 grails.project.groupId="com.spireon"
